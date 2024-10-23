@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function redirectToFetch() {
+            const symbol = document.getElementById('symbol').value;
+            if (symbol) {
+                window.location.href = `/fetch/${symbol}/`;
+            } else {
+                alert("Please enter a stock symbol.");
+            }
+        }
+
+        function redirectToBacktest() {
+            const symbol = document.getElementById('symbol').value;
+            if (symbol) {
+                window.location.href = `/backtest/${symbol}/`;
+            } else {
+                alert("Please enter a stock symbol.");
+            }
+        }
+
+        function redirectToPredict() {
+            const symbol = document.getElementById('symbol').value;
+            if (symbol) {
+                window.location.href = `/predict/${symbol}/`;
+            } else {
+                alert("Please enter a stock symbol.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Stock Analysis Tool</h1>
+
+    <label for="symbol">Enter Stock Symbol:</label>
+    <input type="text" id="symbol" name="symbol" placeholder="e.g., AAPL" />
+
+    <br><br>
+
+    <button onclick="redirectToFetch()">Fetch Stock Data</button>
+    <button onclick="redirectToBacktest()">Run Backtest</button>
+    <button onclick="redirectToPredict()">Predict Stock Prices</button>
+</body>
+</html>

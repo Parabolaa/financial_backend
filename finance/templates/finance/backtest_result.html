@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backtesting Result for {{ symbol }}</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Backtesting Result for {{ symbol }}</h2>
+    
+    <p><strong>Total Return:</strong> {{ result.total_return }}%</p>
+    <p><strong>Max Drawdown:</strong> {{ result.max_drawdown }}%</p>
+    <p><strong>Number of Trades:</strong> {{ result.trades }}</p>
+
+    <div class="buttons">
+        <a href="{% url 'generate_backtest_report' symbol=symbol initial_investment=initial_investment|stringformat:'s' %}" download>Download PDF</a>
+        <a href="{% url 'generate_backtest_json' symbol=symbol initial_investment=initial_investment|stringformat:'s' %}" download>Get JSON Report</a>
+    </div>
+    <!-- <button onclick="window.location.href='{% url 'generate_backtest_report' symbol=symbol initial_investment=initial_investment %}'">Download PDF</button>
+    <button onclick="window.location.href='{% url 'generate_backtest_json' symbol=symbol initial_investment=initial_investment %}'">Get JSON Report</button> -->
+
+    <br><br>
+    <a href="{% url 'backtest' symbol=symbol %}">Run another backtest</a>
+</body>
+</html>

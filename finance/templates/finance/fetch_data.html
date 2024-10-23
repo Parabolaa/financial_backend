@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Data for {{ symbol }}</title>
+</head>
+<body>
+    <h1>Stock Data for {{ symbol }}</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Open Price</th>
+                <th>Close Price</th>
+                <th>High Price</th>
+                <th>Low Price</th>
+                <th>Volume</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in data %}
+            <tr>
+                <td>{{ record.date }}</td>
+                <td>{{ record.open_price }}</td>
+                <td>{{ record.close_price }}</td>
+                <td>{{ record.high_price }}</td>
+                <td>{{ record.low_price }}</td>
+                <td>{{ record.volume }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
