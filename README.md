@@ -51,8 +51,8 @@ $ CREATE DATABASE financial_db
 Clone the project repository (or simply place the project files in a folder):
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/Parabolaa/financial_backend.git
+cd financial_backend
 ```
 
 #### 2. Install Project Dependencies
