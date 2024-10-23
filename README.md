@@ -105,6 +105,11 @@ This will create all the necessary database tables in the financial_db.
 ```bash
 docker-compose up
 ```
+make sure that this command is within your docker-compose.yml file:
+```bash
+python manage.py runserver 0.0.0.0:8000
+```
+or you can run it yourself in terminal.
 
 #### 2. Open your browser and go to:
 ```bash
